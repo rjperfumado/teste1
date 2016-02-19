@@ -1,0 +1,58 @@
+
+# Testando/liberando a conexão via proxy
+>export http_proxy="http://user:senha@cache:80"
+>wget google.com.br
+--2016-02-19 18:28:07--  http://google.com.br/
+Resolvendo cache. (cache.)... 172.17.78.8
+Conectando-se a cache. (cache.)|172.17.78.8|:80... conectado.
+
+
+##Iniciando Comandos GIT##
+
+#### Se posicionar ao diretório que deseja exportar
+
+#Criando arquivo Leia-me
+>echo "# Aulas-Java" >> README.md
+
+#Iniciando o GIT 
+git init
+Initialized empty Git repository in /root/Programacao/workspace/TesteJava1/.git/
+
+#Adicionado o arquivo Leia-me ao git (Para todos somente colocar *)
+>git add README.md
+
+#Marcando o motivo e executando o commit
+>git commit -m "first commit"
+[master (root-commit) 8ba3d73] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+# Acessar o GitHub, criar o repositório e executar o import para a origem
+>git remote add origin https://github.com/rjperfumado/Aulas-Java.git
+
+
+#Executando o push para o GitHub
+>git push -u origin master
+Username for 'https://github.com': rjperfumado
+Password for 'https://rjperfumado@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 237 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/rjperfumado/Aulas-Java.git
+ * [new branch]      master -> master
+
+
+### Correção de erro para o proxy
+
+Caso apareça o erro abaixo após executar o push para o master:
+
+fatal: unable to access 'https://github.com/rjperfumado/Aulas-Java.git/': Received HTTP code 407 from proxy after CONNECT
+esbsa9905eddy:~/Programacao/workspace/TesteJava1 # git remote add origin http://github.com/rjperfumado/Aulas-Java.git
+fatal: remote origin already exists.
+
+#Corrigir com comandos do Git
+>git config --global http.proxy http://user:senha@cache.:80
+
+# A confirmação será a saída:
+sername for 'https://github.com': rjperfumado
+Password for 'https://rjperfumado@github.com': 
