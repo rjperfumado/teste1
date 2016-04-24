@@ -56,3 +56,11 @@ fatal: remote origin already exists.
 # A confirmação será a saída:
 sername for 'https://github.com': rjperfumado
 Password for 'https://rjperfumado@github.com': 
+
+# Correção do Erro "The requested URL returned error: 403 while accessing"
+
+1 - git remote set-url origin https://rjperfumado@github.com/rjperfumado/repo.git
+2 - git push -u origin master
+3 - Vai pedir a senha.
+
+
