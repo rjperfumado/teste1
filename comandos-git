@@ -63,4 +63,8 @@ Password for 'https://rjperfumado@github.com':
 2 - git push -u origin master
 3 - Vai pedir a senha.
 
+# Forçando  sobreescrita no repositorio
+=> git push -f <remote> <branch>
+Ex: git push -f  https://github.com/rjperfumado/Aula1-Cadastro.git master
+
 
