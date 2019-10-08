@@ -67,4 +67,26 @@ Password for 'https://rjperfumado@github.com':
 => git push -f <remote> <branch>
 Ex: git push -f  https://github.com/rjperfumado/Aula1-Cadastro.git master
 
+#Erro de push declined due to email privacy restrictions
+
+1)You can see your personal e-mail address, which is used by default for your commits in Git:
+
+git config --global user.email
+
+2)Find your GitHub noreply address in your GitHub's Personal Settings → Emails. 
+It's mentioned in the description of the Keep my email address private checkbox. Usually, 
+it starts with a unique identifier,plus your username:
+
+{ID}+{username}@users.noreply.github.com
+
+3)Change the global user e-mail address setting to be your GitHub noreply address:
+
+git config --global user.email {ID}+{username}@users.noreply.github.com
+
+4)Reset the author information on your last commit:
+
+git commit --amend --reset-author
+
+5) git push
+
 
